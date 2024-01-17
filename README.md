@@ -22,4 +22,8 @@ administrador a mi parecer es lo que se ncesita en el proyecto.
 
   Django = 5.0.1
 
-  sqlparse = 0.4.4 
+  sqlparse = 0.4.4
+
+- Pasos para ejecutar el proyecto de manera local:
+El primer paso es crear "Podologo" lo mismo con un "Cliente", después de tener ambas variables se crea una "Cita" con dia, hora, paciente y podologo.
+Al crear este ultimo paso se elige un tratamiento de los que ya se han creado anteriormente con su respectivo costo, y se elige uno para la cita previamente elegida.
