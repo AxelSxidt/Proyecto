@@ -21,3 +21,20 @@ def podologo_form(request):
     else:
         form = forms.PodolodoForm()
     return render(request, "Coder/podologo_form.html", {"form": form})
+
+
+def paciente_list(request):
+    consulta = models.Paciente.objects.all()
+    contexto = {"pacientes": consulta}
+    return render(request, "Coder/paciente_list.html", contexto)
+
+
+def paciente_form(request):
+    if request.method == "POST":
+        form = forms.PacienteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("paciente_list")
+    else:
+        form = forms.PacienteForm()
+    return render(request, "Coder/paciente_form.html", {"form": form})

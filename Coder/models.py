@@ -22,7 +22,7 @@ class Cita(models.Model):
     podologo = models.ForeignKey(Podologo, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self) -> str:
-        return f"{self.nombre}-{self.hora}"
+        return f"{self.nombre}-{self.hora.strftime('%H:%M')}"
 
 
 class Tratamiento(models.Model):
@@ -30,7 +30,7 @@ class Tratamiento(models.Model):
     costo = models.PositiveIntegerField()
 
     def __str__(self) -> str:
-        return self.nombre
+        return f"{self.nombre} ${self.costo}" 
 
 class TratamientoParaCita(models.Model):
     cita = models.ForeignKey(Cita, on_delete=models.CASCADE)
